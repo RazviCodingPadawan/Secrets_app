@@ -1,0 +1,161 @@
+
+body {
+  background-color: #114357;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+.container {
+  background-color: white;
+  padding: 2% 2%;
+}
+.jumbotron {
+ background-color: #11435796;
+  height:100vh;
+}
+.card{
+  border:none;
+}
+.btn-card {
+  background-color: white;
+  border: none;
+}
+
+.btn-grad {
+   /*background-image: linear-gradient(to right, #114357 0%, rgba(255, 192, 203, 0.87)  51%, #114357  100%);*/
+   background-image: linear-gradient(to right, #114357 0%,rgba(185, 9, 9, 0.87)  51%, #114357  100%);
+   margin: 10px;
+   padding: 15px 10px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 5px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .btn-dark, .btn-light {
+  background-image: linear-gradient(to right, #114357 0%, rgba(22, 114, 60, 0.87)  51%, #114357  100%);
+  margin: 10px 0;
+  margin-right: 20px;
+   padding: 10px 20px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.7s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 5px #eee;
+   border-radius: 10px;
+   min-width: fit-content;
+   max-width: 30%;
+ }
+ .btn-dark:hover  {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.btn-light:hover  {
+  background-position: center right; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+.register-link, .login-link{
+  color: black;
+  font-weight: 400;
+  font-size:0.8em;
+  line-height: normal;
+
+}
+.register-link:hover, .login-link:hover{
+  font-weight:bolder;
+ 
+  color:#114357;
+}
+
+.header-icon{
+   text-align: center;
+ }
+#home-btn {
+  color: black;
+  text-decoration: none;
+  
+}
+#home-btn:hover {
+  color: #114357;
+}
+
+#accept-btn,
+#cancel-btn {
+  box-shadow: 0 0 5px #eee;
+  border-radius: 10px;
+  margin: 0 5px;
+}
+#accept-btn:hover,
+#cancel-btn:hover {
+  cursor: pointer;
+  background-color: white;
+  font-weight: bolder;
+}
+.fa-cookie{
+  margin-bottom: 5%;
+}
+
+#cookie-consent{
+  width: 100%;
+  height: 40%;
+  text-align:center;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.966);
+
+  opacity: 1;
+  transition: opacity .5s ease;
+}
+#cookie-consent.active {
+  bottom:0;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.terms{
+  color: black;
+  font-weight: bolder;
+  font-style: italic;
+}
+.terms:hover {
+  transition: 6ms;
+}
+
+.aLink{
+  margin-bottom: 2em;
+  color: black;
+  font-style: italic;
+
+}

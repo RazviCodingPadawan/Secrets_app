@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <a href="/"><i class="fas fa-home fa-2x" id="home-btn"></i></a>
+  <div class="header-icon"><i class="fas fa-key fa-6x"></i></div>
+  <h1 class="page-header">Login</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <!-- Makes POST request to /login route -->
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username" autofocus required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="captcha-container">
+              <div class="frc-captcha" data-sitekey="FCMM87G31C3E2V7P" ></div>
+              <br/>
+              <div class="g-recaptcha" data-sitekey="6Ld-eiIeAAAAAHOSyH_jxBKDn_IkFSlvy4x36GxT" data-callback="recaptcha_callback"></div>
+          </div>
+          <br>
+            <button id="loginBtn" type="submit" class="btn btn-dark login-btn" disabled>Login</button>
+          <br>
+          <br>
+        </form>
+        <a href="/register" class="register-link">Oops, I need to register. 
+          <br>Take me to the register form >></a>
+
+        </div>
+      </div>
+    </div>
+<div class="col-sm-4">
+      <div class="card">
+        <div class="card-body btn-card">
+          <a class="btn btn-block btn-grad" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  function recaptcha_callback() {
+      document.getElementById('loginBtn').disabled = false;
+  }
+</script>

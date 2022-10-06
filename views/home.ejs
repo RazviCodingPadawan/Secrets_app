@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+
+<div class="jumbotron centered">
+  <div class="container">
+    <div class="header-icon"><i class="fas fa-lock fa-6x"></i></div>
+    <h1 class="page-header">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+
+   
+    <div id="buttonDiv">
+      <button id="loginBtn" class="btn btn-dark btn-lg" disabled>
+        <a href="/login">Login</a></button>
+      <button id="registerBtn" class="btn btn-light btn-lg" disabled>
+        <a href="/register">Register</a> </button> 
+    </div>
+  </div>
+
+  <div id="cookie-consent">
+    <i class="fas fa-cookie fa-4x fa-pulse"></i>
+    <p>By using this site you agree to our <a href="/terms" class="terms">Terms and conditions</a>.<br>
+      Please <button id="accept-btn">ACCEPT</button> 
+      these before using our site.<br>
+      <button id="cancel-btn">Reject</button>
+    </p>
+  </div>
+
+
+
+  <script>
+    const cookieContainer = document.getElementById("cookie-consent");
+    const cookieAccept = document.getElementById("accept-btn");
+
+    cookieAccept.addEventListener("click", () => { 
+      console.log('user accepted cookies');
+      cookieContainer.classList.remove("active");
+      sessionStorage.setItem("cookieBannerDisplayed", "true");
+      document.getElementById("registerBtn").disabled = false; 
+      document.getElementById("loginBtn").disabled = false; 
+    });
+    setTimeout(() => {
+      if (!sessionStorage.getItem("cookieBannerDisplayed")) {
+        cookieContainer.classList.add("active");
+      }
+    }, 2000);
+     const cancelButton = document.getElementById("cancel-btn");
+    cancelButton.addEventListener("click", () => {
+      console.log("user rejected cookies");
+    document.getElementById("registerBtn").disabled = true;
+    document.getElementById("loginBtn").disabled = true;   
+     });
+    
+
+
+document.cookie="cookieBannerDisplayed=True";
+var accept = getCookie("cookieBannerDisplayed"); 
+
+if (cookieBannerDisplayed =="True") {
+    document.cookie = "cookieBannerDisplayed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    window.location.reload();
+}
+</script>
+</div>
+
+<%- include('partials/footer') %>
